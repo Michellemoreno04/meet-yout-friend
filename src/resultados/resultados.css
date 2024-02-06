@@ -1,0 +1,60 @@
+
+.cuadro-resultados {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .cuadro-resultados th, .cuadro-resultados td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .cuadro-resultados th {
+    background-color: #f2f2f2;
+  }
+  
+  .table-name {
+    font-weight: bold;
+  }
+  /*boton volver*/
+  .button {
+    display: flex;
+position: relative;
+left: 980px;
+    padding: 6px 12px;
+    gap: 8px;
+    height: 34px;
+    width: 112px;
+    border: none;
+    background: #ff362b34;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .lable {
+    line-height: 20px;
+    font-size: 17px;
+    color: #FF342B;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .button:hover {
+    background: #ff362b52;
+  }
+  
+  .button:hover .svg-icon {
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
