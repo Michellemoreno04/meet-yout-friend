@@ -2,7 +2,7 @@
 
     width: 1000px;
     height: 500px;
-    font-size: 25px;
+    font-size: 30px;
     border: 2px solid rgba(0, 0, 0, 0.301);
     border-radius: 10px;
     margin: auto;
@@ -12,14 +12,43 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: rgb(46, 161, 255);
-    
+    color: white;
+    background-image: url("../imagenes/morada.png");
+    padding: 25px;
+}
+.nav{
+    width: 100%;
+    height: 70px;
+    background-color: rgba(76, 43, 226, 0.797);
+    display: flex;
+    align-items: center;
+
+}
+.nav ul{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    list-style: none;
+}
+.nav li{
+    margin-right: 25px;
+    color: white; 
+    font-size: 20px;
+
+}
+.nav li:hover{
+transform: scale(1.1);
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 500%;
+    padding: 15px;
 }
 .respuestas{
     width: 800px;
 display: flex;
 flex-direction: column;
-background-color: rgba(46, 182, 240, 0.454);
 margin-top: 25px;
 border-radius: 15px;
 padding: 10px;
@@ -43,3 +72,5 @@ transform: scale(1.1);
     height: 50px;
     display: block;
 }
+
+/*animate__backInLeft*/

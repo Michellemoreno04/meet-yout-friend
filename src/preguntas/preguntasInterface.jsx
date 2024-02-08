@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
-
+import MYF from "../imagenes/MYF.png"
+import { Link } from "react-router-dom";
+import 'animate.css';
 function PreguntasInterface() {
   // para escuchar cuando se cambie la pregunta
   const [preguntaActual, setPreguntaActual] = useState(0);
@@ -34,7 +36,11 @@ function PreguntasInterface() {
   // Función para cambiar de pregunta
   const cambiarPregunta = (isCorrect) => {
     // añadir puntuacion
-    if (isCorrect) setPuntuacion((prevPuntuacion) => prevPuntuacion + 1);
+    if (isCorrect){
+      setPuntuacion((prevPuntuacion) => prevPuntuacion + 1)
+
+    } 
+
 
     // cambiar a la siguiente pregunta
     if (preguntaActual === preguntasAleatorias.length - 1) {
@@ -86,10 +92,13 @@ function PreguntasInterface() {
     }
   };
 
-
   return (
+    <div>
+      <Navar/>
+    
     <div className="preguntas">
-      <h1>{preguntasAleatorias[preguntaActual]?.pregunta}</h1>
+      
+      <h1 className="animate__animated animate__backInLeft">{preguntasAleatorias[preguntaActual]?.pregunta}</h1>
 
       <div className="respuestas">
         {respuestasAleatorias.map((x) => (
@@ -103,7 +112,24 @@ function PreguntasInterface() {
         ))}
       </div>
     </div>
+    </div>
   );
 }
 
+export function Navar(){
+  return(
+    <nav className="nav">
+      <img src={MYF} alt=""  className="logo"/>
+      <ul>
+        <Link to="/">
+        <li>Inicio</li>
+        </Link>
+      <Link to="/resultados">
+      <li>Resultados</li>
+      </Link>
+        
+      </ul>
+    </nav>
+  )
+}
 export default PreguntasInterface;

@@ -67,7 +67,7 @@ const preguntas =[
 
     ]
 },{
-    pregunta:  " Que he querido hacer siempre?",
+    pregunta:  " Que ha querido hacer siempre?",
     opciones: [
         {respuestas: "Viajar", isCorrect: true},
         {respuestas: "Saltar de un paracaida", isCorrect: false},

@@ -40,7 +40,7 @@ function enviar(nombre){
              {/*error viene de useForm*/}
             {errors.nombre && <p style={{color:"red",fontSize:"15px"}}>Este campo es requerido.</p>}
                 {error && <p>{error}</p>}
-            <p>Ingrese el nombre para saber quien eres </p>
+            <p>Ingrese el nombre de quien realizara la prueva</p>
 
            
             <button className="btn1" type="submit">Enviar</button>

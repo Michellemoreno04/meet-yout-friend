@@ -10,15 +10,19 @@
     margin-top: 80px;
     border:2px solid rgba(0, 0, 0, 0.308);
     border-radius: 15px;
+    background-image: url("imagenes/morada.png");
+    
     
 }
 .presentacion h1{
-    color: rgb(0, 166, 255);
-    font-size: 45px;
+    color: white;
+    font-size: 50px;
+    text-align: center;
 }
 p{
+  width: 700px;
     font-size: 20px;
-    color: #000000bf;
+    color:white;
 }
                                                  /* PRIMER BOTON DE EMPEZAR*/
 .btn1 {
