@@ -7,6 +7,9 @@ import { db } from "../firebase";
 import MYF from "../imagenes/MYF.png"
 import { Link } from "react-router-dom";
 import 'animate.css';
+
+
+
 function PreguntasInterface() {
   // para escuchar cuando se cambie la pregunta
   const [preguntaActual, setPreguntaActual] = useState(0);
