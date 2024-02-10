@@ -67,27 +67,29 @@ function PreguntasInterface() {
           
         },
         
+      }).then(()=>{
+        const nombre = window.localStorage.getItem("nombre")
+        const puntuaciones = window.localStorage.getItem("puntuacion")
+            
+            if (nombre && puntuaciones) {
+              const nameUser = collection(db, "usuarios");
+    
+              // Objeto con la información a guardar en la base de datos
+              const data = {
+                nombre: nombre,
+                puntuacion: puntuacion + (isCorrect ? 1 : 0),
+              };
+    
+              addDoc(nameUser, data).then(() => {
+                return (window.location.href = "/resultados");
+              });
+            }
       })
       
       
           // Verificar si tenemos tanto nombre como puntuaciones antes de realizar la inserción en la base de datos
    
-          const nombre = window.localStorage.getItem("nombre")
-      const puntuaciones = window.localStorage.getItem("puntuacion")
-          
-          if (nombre && puntuaciones) {
-            const nameUser = collection(db, "usuarios");
-  
-            // Objeto con la información a guardar en la base de datos
-            const data = {
-              nombre: nombre,
-              puntuacion: puntuacion + (isCorrect ? 1 : 0),
-            };
-  
-            addDoc(nameUser, data).then(() => {
-              return (window.location.href = "/resultados");
-            });
-          }
+    
       
       // Resto del código para mostrar el resultado y guardar en la base de datos...
     } else {
