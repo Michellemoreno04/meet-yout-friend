@@ -5,9 +5,11 @@ import Swal from "sweetalert2";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import MYF from "../imagenes/MYF.png"
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import 'animate.css';
-import Resultados from "../resultados/resultado";
+
+
+
 
 
 function PreguntasInterface() {
@@ -21,6 +23,9 @@ function PreguntasInterface() {
   const [preguntasAleatorias, setPreguntasAleatorias] = useState([]);
   // para almacenar respuestas en orden aleatorio
   const [respuestasAleatorias, setRespuestasAleatorias] = useState([]);
+
+// useNavigate como usehistory es para redirecciones
+  const history = useNavigate();
 
   useEffect(() => {
     // Mezclar las preguntas y respuestas de forma aleatoria al cargar el componente
@@ -75,10 +80,10 @@ function PreguntasInterface() {
                     nombre: nombre,
                     puntuacion: puntuacion + (isCorrect ? 1 : 0),
                   };
-        console.log("no se añadio a la db ",data)
+        
                   addDoc(nameUser, data).then(() => {
-                    console.log("si, se añadio a la db: ",data)
-                     return (window.location.href = "/resultados");
+                    
+                     history("/resultados")
                      
                   });
                 }
