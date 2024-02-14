@@ -71,7 +71,7 @@ function PreguntasInterface() {
           }).then(()=>{
             const nombre = window.localStorage.getItem("nombre")
             const puntuaciones = window.localStorage.getItem("puntuacion")
-                
+                console.log(nombre,puntuacion)
                 if (nombre && puntuaciones) {
                   const nameUser = collection(db, "usuarios");
         
@@ -82,10 +82,14 @@ function PreguntasInterface() {
                   };
         
                   addDoc(nameUser, data).then(() => {
-                    
+                    console.log("añadido a la db")
+                    // redireccion
                      history("/resultados")
                      
-                  });
+                  })
+              
+                }else{
+                    console.log("no se agrego nada a la db")
                 }
           })
           
