@@ -13,3 +13,5 @@ Currently, two official plugins are available:
         {"source":"/(.*)","destination":"/"}
     ]
 }
+
+* el archivo .htacces en dist es para que funcione bien lasrutas en hostinger y en el packege.json hay un apartado que tambien se debe poner el cual es este ("homepage": "https://uwb-conneted.site", ) debe de ir arriva de scrips 

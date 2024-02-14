@@ -7,7 +7,7 @@ import { db } from "../firebase";
 import MYF from "../imagenes/MYF.png"
 import { Link } from "react-router-dom";
 import 'animate.css';
-
+import Resultados from "../resultados/resultado";
 
 
 function PreguntasInterface() {
@@ -63,27 +63,29 @@ function PreguntasInterface() {
             setTimeout(() => {
               resolve();
             }, 2000); // Simula una espera de 2 segundos antes de redireccionar
-          });
+          }).then(()=>{
+            const nombre = window.localStorage.getItem("nombre")
+            const puntuaciones = window.localStorage.getItem("puntuacion")
+                
+                if (nombre && puntuaciones) {
+                  const nameUser = collection(db, "usuarios");
+        
+                  // Objeto con la información a guardar en la base de datos
+                  const data = {
+                    nombre: nombre,
+                    puntuacion: puntuacion + (isCorrect ? 1 : 0),
+                  };
+        console.log("no se añadio a la db ",data)
+                  addDoc(nameUser, data).then(() => {
+                    console.log("si, se añadio a la db: ",data)
+                     return (window.location.href = "/resultados");
+                     
+                  });
+                }
+          })
           
         },
         
-      }).then(()=>{
-        const nombre = window.localStorage.getItem("nombre")
-        const puntuaciones = window.localStorage.getItem("puntuacion")
-            
-            if (nombre && puntuaciones) {
-              const nameUser = collection(db, "usuarios");
-    
-              // Objeto con la información a guardar en la base de datos
-              const data = {
-                nombre: nombre,
-                puntuacion: puntuacion + (isCorrect ? 1 : 0),
-              };
-    
-              addDoc(nameUser, data).then(() => {
-                return (window.location.href = "/resultados");
-              });
-            }
       })
       
       
