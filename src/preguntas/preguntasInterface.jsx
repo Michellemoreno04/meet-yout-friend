@@ -72,15 +72,14 @@ function PreguntasInterface() {
             const nombre = window.localStorage.getItem("nombre")
             const puntuaciones = window.localStorage.getItem("puntuacion")
                 console.log(nombre,puntuacion)
-                if (nombre && puntuaciones) {
+                 // Objeto con la información a guardar en la base de datos
+                 const data = {
+                  nombre: nombre,
+                  puntuacion: puntuacion + (isCorrect ? 1 : 0),
+                };
+                if (data) {
                   const nameUser = collection(db, "usuarios");
-        
-                  // Objeto con la información a guardar en la base de datos
-                  const data = {
-                    nombre: nombre,
-                    puntuacion: puntuacion + (isCorrect ? 1 : 0),
-                  };
-        
+      
                   addDoc(nameUser, data).then(() => {
                     console.log("añadido a la db")
                     // redireccion

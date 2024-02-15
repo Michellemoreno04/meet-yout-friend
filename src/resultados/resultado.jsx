@@ -2,8 +2,9 @@ import "./resultados.css";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore"; 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Navar } from "../preguntas/preguntasInterface";
+
+
 function Resultados() {
     //aqui vienen los datos por eso es datos es un array para que almacene todos los datos
     const [datos, setDatos] = useState([]);
@@ -42,7 +43,7 @@ function Resultados() {
                     {datos.map((usuario, index) => (
                         <tr key={index}>
                             <td>{usuario.nombre}</td>
-                            <td>{usuario.puntuacion}</td>
+                            <td>{usuario.puntuacion + "/10"}</td>
                         </tr>
                     ))}
                 </tbody>
