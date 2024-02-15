@@ -81,7 +81,7 @@ function PreguntasInterface() {
                   const nameUser = collection(db, "usuarios");
       
                   addDoc(nameUser, data).then(() => {
-                    console.log("añadido a la db")
+                    
                     // redireccion
                      history("/resultados")
                      

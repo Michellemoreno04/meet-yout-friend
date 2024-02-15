@@ -73,4 +73,21 @@ transform: scale(1.1);
     display: block;
 }
 
-/*animate__backInLeft*/
+                           /*para mobile*/
+                    
+@media screen and (max-width:1000px) {
+    .preguntas{
+        width: 340px;
+        margin: auto;
+        margin-top: 15px;
+    }
+    .preguntas h1{
+        font-size: 35px;
+    }
+    .btn-respuestas{
+        margin: auto;
+        margin-top: 15px;
+        
+    }
+    
+}

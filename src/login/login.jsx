@@ -1,7 +1,7 @@
 import "./login.css"
 import { useForm } from "react-hook-form"
 import { useState } from "react";
-
+import {Navar} from "../preguntas/preguntasInterface"
 
 
 function Login(){
@@ -25,6 +25,8 @@ function enviar(nombre){
 }
 
     return(
+      <div>
+<Navar/>
         <div className="loginform">
           <form onSubmit={handleSubmit(enviar)} className="logForm" >
             <label>
@@ -46,6 +48,7 @@ function enviar(nombre){
             <button className="btn1" type="submit">Enviar</button>
            
           </form>
+        </div>
         </div>
     )
 

@@ -72,13 +72,24 @@ p{
     opacity: 0;
   }
                                                      /*estilos para cell */
-/*
-@media  screen  {
+
+ @media screen and (max-width:1000px){
   .presentacion{
-    width: 500px;
-   
-    display:grid;
-    place-items: center;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 15px;
+    padding: 30px;
+  }
+  .presentacion p {
+width: 315px;
+padding: 5px;
+margin: auto;
+
+  } 
+  .btn1{
+    margin: 25px;
   }
   
-}*/
+}
