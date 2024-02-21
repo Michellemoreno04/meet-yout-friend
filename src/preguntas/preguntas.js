@@ -49,7 +49,7 @@ const preguntas =[
 
     ]
 },{
-    pregunta:  " Cuál crees que es mi mayor miedo o preocupación?",
+    pregunta:  " Cuál crees que es su mayor miedo o preocupación?",
     opciones: [
         {respuestas: "Perder familias cercanos", isCorrect: true},
         {respuestas: "Tirarme de un caida", isCorrect: false},
@@ -76,7 +76,7 @@ const preguntas =[
 
     ]
 },{
-    pregunta:  "Que es lo que mas me molesta?",
+    pregunta:  "Que es lo que mas le molesta?",
     opciones: [
         {respuestas: "La falta de respeto", isCorrect: true},
         {respuestas: "Desorden", isCorrect: false},
@@ -85,7 +85,7 @@ const preguntas =[
 
     ]
 },{
-    pregunta:  "Que me gusta estudiar?",
+    pregunta:  "Que le gusta estudiar?",
     opciones: [
         {respuestas: "Programacion", isCorrect: true},
         {respuestas: "Hacking", isCorrect: false},
